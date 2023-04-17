@@ -1,25 +1,24 @@
 body {
   font-family: "Poppins", sans-serif;
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1480px;
+  margin: 10px 90px ;
 }
 
-main:after {
+/* main:after {
   content: "";
   min-height: 100vh;
   width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
-
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0.05926120448179273) 50%,
     rgba(0, 0, 0, 1) 100%
   );
   z-index: -1;
-}
+} */
 
 .conteudo {
   display: flex;
@@ -29,27 +28,28 @@ main:after {
 }
 
 .informacoes .logo {
-  max-width: 380px;
-  margin-bottom: 20px;
+  max-width: 480px;
   color: #f9b232;
 }
 
 .informacoes .descricao {
-  width: 49%;
+  width: 69%;
   font-size: 30px;
+  font-weight: 500;
   color: #fff;
-  line-height: 30px;
+  line-height: 35px;
   margin: 60px 0px 45px 15px;
 }
 
 .informacoes .frase {
   font-family: Dancing Script;
-  font-size: 45px;
+  font-size: 55px;
   color: #fff;
   margin-left: 15px;
 }
 
 .botoes-carrossel {
+  z-index: -2;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -57,7 +57,6 @@ main:after {
 }
 
 .botoes-carrossel .botao {
-  background-color: transparent;
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -74,7 +73,7 @@ main:after {
   position: fixed;
   top: 0;
   right: 0;
-  width: 80px;
+  width: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -88,7 +87,7 @@ main:after {
 }
 
 .menu-lateral .icone {
-  width: 45px;
+  width: 60px;
   filter: invert(1);
   transition: 0.3s ease-in-out;
 }
