@@ -1,87 +1,130 @@
 @media (max-width: 1280px) {
   body {
-    margin: auto;
-    padding: 0px;
+  margin: auto;
+  padding: 0;
   }
   .logo {
-    width: 100vw;
+  width: 100vw;
   }
   .informacoes {
-    margin-left: 35px;
+  margin-left: 2.734375em;
   }
   .informacoes .descricao {
-    width: 100%;
-    font-size: 25px;
-    font-weight: 300;
-    color: #fff;
-    line-height: 30px;
+  width: 100%;
+  font-size: 1.5625em;
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.2em;
   }
   .informacoes .frase {
-    font-size: 45px;
+  font-size: 2.8125em;
   }
-}
+  }
+  
+  @media (max-width: 768px) {
+  .informacoes {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  }
+  .informacoes .descricao {
+  width: 80%;
+  font-size: 1.25em;
+  }
+  }
+  
+  @media (max-width: 425px) {
+  .informacoes {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-left: 0;
+  }
+  .informacoes .logo {
+  max-width: 18.75em;
+  margin-bottom: 1.875em;
+  }
+  .carrosel img {
+  max-width: 200%;
+  }
+  .informacoes .descricao {
+  width: 100%;
+  font-size: 1.25em;
+  line-height: 1.2em;
+  }
+  .informacoes .frase {
+  font-size: 1.75em;
+  }
+  .botoes-carrossel {
+  margin-top: 0.625em;
+  }
+  .menu-lateral {
+  position: static;
+  min-height: auto;
+  width: 100%;
+  margin-top: 2.5em;
+  gap: 1.5625em;
+  }
+  .menu-lateral ul {
+  flex-direction: row;
+  }
+  .conteudo {
+  min-height: 80vh;
+  gap: 0;
+  }
+  }
 
 @media (max-width: 768px) {
   .informacoes {
-    display: flex;
     flex-direction: column;
     align-items: center;
-    background: none;
+    justify-content: center;
+    text-align: center;
   }
   .informacoes .descricao {
     width: 80%;
-    text-align: center;
   }
 }
 
 @media (max-width: 425px) {
+  .informacoes {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
   .informacoes .logo {
     max-width: 300px;
-    margin-bottom: 30px;
-    margin-top: 5px;
+    margin-bottom: 1.875em;
   }
   .carrosel img {
     max-width: 200%;
   }
-
   .informacoes .descricao {
     width: 100%;
-    font-size: 20px;
-    justify-items: center;
+    font-size: 1.25em;
+    line-height: 1.2em;
   }
   .informacoes .frase {
-    width: 100%;
-    font-size: 28px;
-  }
+    font-size: 2em;
+    line-height: 1.4em;
 
-  .botoes-carrossel {
-    margin-top: 10px;
   }
-
   .menu-lateral {
     position: static;
     min-height: auto;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 2.5em;
+    gap: 1.5625em;
   }
-
   .menu-lateral ul {
     flex-direction: row;
   }
-
   .conteudo {
-    min-height: 70vh;
-    gap: 30px;
-  }
-
-  body {
-    padding: 10px;
-    margin-top: 10px;
-    /* background: linear-gradient(
-      90deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0.05926120448179273) 50%,
-      rgba(0, 0, 0, 1) 100%
-    ); */
+    min-height: 80vh;
+    max-width: 90vw;
+    gap: 0;
   }
 }
