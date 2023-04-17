@@ -3,28 +3,21 @@
     margin: auto;
     padding: 0px;
   }
-
   .logo {
     width: 100vw;
   }
-
   .informacoes {
-	margin-left: 35px;
+    margin-left: 35px;
   }
-
-  .informacoes .logo{
-	
-  }
-
   .informacoes .descricao {
     width: 100%;
-	margin-top: -10px;
+    margin-top: -10px;
     font-size: 25px;
     font-weight: 300;
     color: #fff;
     line-height: 30px;
   }
-  .informacoes .frase{
+  .informacoes .frase {
     font-size: 45px;
   }
 }
@@ -36,7 +29,6 @@
     align-items: center;
     background: none;
   }
-
   .informacoes .descricao {
     width: 80%;
     text-align: center;
@@ -46,25 +38,27 @@
 @media (max-width: 425px) {
   .informacoes .logo {
     max-width: 300px;
-	margin-bottom: 30px;
-	margin-top: 5px;
+    margin-bottom: 30px;
+    margin-top: 5px;
+  }
+  .carrosel img {
+    max-width: 200%;
   }
 
   .informacoes .descricao {
     width: 100%;
-	font-size: 20px;
-	justify-items: center;
-	margin-left: -10px;
-
+    font-size: 20px;
+    justify-items: center;
+    margin-left: -10px;
   }
   .informacoes .frase {
     width: 100%;
-	font-size: 28px;
-	margin-left: -10px;
+    font-size: 28px;
+    margin-left: -10px;
   }
 
-  .botoes-carrossel{
-	margin-top: 10px;
+  .botoes-carrossel {
+    margin-top: 10px;
   }
 
   .menu-lateral {
@@ -85,8 +79,12 @@
 
   body {
     padding: 10px;
-	margin-top:10px;
-	background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 100%);
-
+    margin-top: 10px;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.05926120448179273) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
   }
 }
