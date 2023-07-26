@@ -48,6 +48,7 @@ body {
   margin-left: 15px;
 }
 
+/*
 .botoes-carrossel {
   z-index: -2;
   display: flex;
@@ -68,6 +69,7 @@ body {
 .botoes-carrossel .botao.selecionado {
   background-color: #f9b232;
 }
+*/
 
 .menu-lateral {
   position: fixed;
