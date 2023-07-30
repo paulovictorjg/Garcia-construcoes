@@ -6,7 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Garcia Construções</title>
-
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -20,52 +19,106 @@
 </head>
 
 <body>
+	<section id="inicio">
+		<header class="menu">
+			<div class="icone">
+				<img src="/src/imagens/icone-menu.png" alt="icone-menu">
+				<div class="titulo">
+					<h3>Garcia</h3>
+				</div>
+			</div>
+			<nav class="menu-itens">
+				<a href="#inicio">Início</a>
+				<a href="#galeria">Galeria</a>
+				<a href="#sobre">Sobre</a>
+				<a href="#contato">Contato</a>
+			</nav>
+		</header>
+	</section>
+
 	<main>
-		<div class="carrossel">
-			<img class="imagem ativa" src="/src/imagens/slide(1).jpg" alt="" />
+		<div class="foto-fundo-ini">
 
-			<img class="imagem" src="/src/imagens/slide(2).jpg" alt="" />
-
-			<img class="imagem" src="/src/imagens/slide(3).jpg" alt="" />
-
-			<img class="imagem" src="/src/imagens/slide(4).jpg" alt="" />
-
-			<img class="imagem" src="/src/imagens/slide(5).jpg" alt="" />
-
-			<img class="imagem" src="/src/imagens/slide(6).jpg" alt="" />
-		</div>
-
-		<div class="conteudo">
-			<div class="informacoes">
-				<img class="logo" src="./src/imagens/logoGC.png" alt="logo The Last of Us" />
-				<p class="descricao">Nos Contate para um orçamento
-					</br>estamos a disposição para 
-					<br>Construir seu sonho !
-					</br>Garcia Construções desde 2003
-					</br> Construindo Sonhos com Qualidade</br>
-				</p>
-				<p>
-					<span class="frase">"Com Deus na Frente Seguimos"</span></br>
-				</p>
+			<div class="conteudo">
+				<div class="informacoes">
+					<img class="logo" src="./src/imagens/logoGC.png" alt="logo The Last of Us" />
+				</div>
+				<div class="descricao">
+					<p>Nos Contate para um orçamento<br>estamos a disposição para<br>seu sonho !<br>Garcia Construções desde 2003<br> Construindo Sonhos com Qualidade
+					</p>
+				</div>
+				<div class="frase">
+					<p><span>"Com Deus na Frente Seguimos"</span></p>
+				</div>
 			</div>
 		</div>
 
-		<aside class="menu-lateral">
-			<ul class="bot">
-				<li>
-					<a href="https://wa.me/5547999905987" target="_blank">
-						<img src="./src/imagens/whatsapp.svg" alt="ícone whatsapp" class="icone" />
-					</a>
-				</li>
-				<li>
-					<a href="https://www.instagram.com/garciaconstrucoes99/?igshid=YmMyMTA2M2Y%3D" target="_blank">
-						<img src="./src/imagens/instagram.svg" alt="ícone Instagram" class="icone" />
-					</a>
-				</li>
-			</ul>
-		</aside>
+		<section class="galeria" id="galeria">
+			<div class="titulo-galeria">
+				<h2>Conheça nosso trabalho</h2>
+			</div>
+			<div class="container-galeria">
+				<div class="fotos-galeria">
+					<img src="src/imagens/slide(1).JPG" alt="">
+					<img src="src/imagens/slide(2).JPG" alt="">
+					<img src="src/imagens/slide(3).JPG" alt="">
+					<img src="src/imagens/slide(4).JPG" alt="">
+					<img src="src/imagens/slide(5).JPG" alt="">
+					<img src="src/imagens/slide(6).JPG" alt="">
+					<img src="src/imagens/slide(3).JPG" alt="">
+					<img src="src/imagens/slide(1).JPG" alt="">
+					<!-- Add two more images here -->
+				</div>
+			</div>
+		</section>
+
+
+		<section class="sobre" id="sobre">
+			<div class="coluna-foto">
+				<div class="foto-sobre">
+					<img src="/src/imagens/foto-perfil.jpg" alt="">
+				</div>
+			</div>
+			<div class="coluna-texto">
+				<div class="conteudo-sobre">
+					<h2>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, enim maiores ipsam neque dolor ducimus iusto, quis reprehenderit id mollitia nobis quasi obcaecati debitis optio. Asperiores consequatur alias sed mollitia.
+						<br>
+						<br>
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque ipsam molestiae fuga, quasi iusto asperiores ullam cupiditate dolor aliquam quibusdam sed! Vitae vel porro earum cum facere corporis inventore fugit.
+					</h2>
+				</div>
+			</div>
+		</section>
+
 	</main>
 	<script src="./src/js/index.js"></script>
+
+	<section id="contato">
+		<footer>
+			<div class="container-footer">
+				<div class="coluna-logo">
+					<img src="/src/imagens/icone-footer.png" alt="Ícone Garcia Construções">
+				</div>
+				<div class="coluna-itens">
+					<ul>
+						<li>
+							<h3>Contate-nos</h3>
+						</li>
+						<li><a href="https://wa.me/5547999905987" target="_blank">
+								<p>Tel:. 047 999905987</p>
+							</a></li>
+						<li><a href="https://www.instagram.com/garciaconstrucoes99/?igshid=YmMyMTA2M2Y%3D" target="_blank">
+								<p>Instagram:. @Garciaconstrucoes99</p>
+							</a></li>
+						<li>
+							<p>Jaraguá do Sul, SC</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</section>
 </body>
 
 </html>

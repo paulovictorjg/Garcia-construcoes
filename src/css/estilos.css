@@ -1,92 +1,287 @@
+/* Esconde a barra de rolagem vertical */
 body {
-            font-family: "Poppins", sans-serif;
-            margin: 0; /* Removemos a margem para evitar espaçamento desnecessário */
-            padding: 0; /* Removemos o padding para evitar espaçamento desnecessário */
-        }
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer e Edge */
+}
 
-        .conteudo {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: space-evenly;
-            overflow: hidden; /* Impedimos barras de rolagem */
-        }
+/* Permite a navegação usando o teclado */
+body::-webkit-scrollbar {
+  width: 1px;
+}
 
-        .informacoes .logo {
-            max-width: 480px;
-            color: #f9b232;
-            margin-left: 35px;
-        }
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
-        .informacoes .descricao {
-            width: 69%;
-            font-size: 25px;
-            font-weight: 500;
-            color: #fff;
-            line-height: 35px;
-            margin: 35px 60px 25px 45px;
-        }
+body::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 5px;
+}
 
-        .informacoes .frase {
-            font-family: Dancing Script;
-            font-size: 55px;
-            color: #fff;
-            margin-left: 35px;
-        }
+body {
+  font-family: "Poppins", sans-serif;
+  max-width: 100%;
+}
 
-        .menu-lateral {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden; /* Impedimos barras de rolagem */
-        }
+.foto-fundo-ini {
+  background-image: url("/src/imagens/slide(1).jpg");
+  background-repeat: no-repeat; /* Removendo o slide */
+  background-size: cover; /* Para cobrir todo o espaço do elemento */
+  background-position: center; /* Centralizando a imagem */
+  max-width: 100%;
+}
+.menu {
+  position: fixed; /* Fixar o menu no topo da página */
+  top: 0; /* Posicionar o menu no topo da página */
+  left: 0; /* Posicionar o menu à esquerda da página */
+  width: 100%; /* Fazer o menu ocupar toda a largura da página */
+  height: 35px;
+  background-color: #f9b232; /* Definir a cor de fundo do menu */
+  display: flex; /* Usar flexbox para posicionar o título e os itens do menu */
+  justify-content: space-between; /* Colocar o título à esquerda e os itens do menu à direita */
+  align-items: center; /* Centralizar verticalmente o conteúdo do menu */
+  padding: 10px; /* Adicionar um espaço de preenchimento interno ao menu para melhorar a aparência */
+}
 
-        .menu-lateral ul {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+.menu-itens {
+  display: flex; /* Usar flexbox para posicionar os itens do menu */
+}
 
-        .menu-lateral .icone {
-            width: 60px;
-            filter: invert(1);
-            transition: 0.3s ease-in-out;
-        }
+.menu-itens a {
+  margin-left: 10px; /* Adicionar um espaço entre os itens do menu (opcional) */
+  font-size: 1..8em;
+  text-decoration: none; /* Remover a decoração de link padrão */
+  color: #333; /* Definir a cor do texto dos itens do menu */
+}
 
-        .menu-lateral .icone:hover {
-            transform: scale(1.3);
-        }
+.menu .icone {
+  display: flex; /* Usar flexbox para alinhar os elementos horizontalmente */
+  align-items: center; /* Centralizar verticalmente o ícone e o título */
+}
 
-        .carrossel {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: -1;
-        }
+.menu .icone img {
+  width: 28px; /* Definir o tamanho do ícone */
+  margin-right: 5px; /* Ajuste a margem para controlar o espaçamento entre o ícone e o título */
+}
 
-        .carrossel .imagem {
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            display: none;
-            animation: mudarImagem 0.9s;
-        }
+/* Estilize o título da página conforme necessário */
+.menu .titulo h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0; /* Remova qualquer margem padrão que possa estar causando o espaçamento indesejado */
+}
 
-        .carrossel .imagem.ativa {
-            display: block;
-        }
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-evenly;
+}
 
-        @keyframes mudarImagem {
-            from {
-                opacity: 0.85;
-            }
-            to {
-                opacity: 1;
-            }
-        }
+.logo {
+  max-width: 350px;
+}
+
+.descricao {
+  font-weight: 500px;
+  font-size: 20px;
+  line-height: 25px;
+  color: #fff;
+  margin-left: 50px;
+}
+
+.frase {
+  font-family: Dancing Script;
+  font-size: 45px;
+  color: #fff;
+  margin-left: 50px;
+}
+
+.carrossel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.carrossel .imagem {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: none;
+  animation: mudarImagem 0.9s;
+}
+
+.carrossel .imagem.ativa {
+  display: block;
+}
+
+@keyframes mudarImagem {
+  from {
+    opacity: 0.85;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.sobre {
+  margin-top: 70px; /* Adiciona margem superior para acomodar o menu */
+}
+
+.titulo-galeria{
+  color: #fff;
+  margin-top: 15px;
+}
+
+.galeria {
+  background: #333;
+  max-width: 100%;
+  max-height: 80%;
+  display: flex;
+  flex-wrap: wrap; /* Allow gallery items to wrap to the next row */
+  justify-content: center; /* Center the gallery items horizontally */
+  margin-top: 20px; /* Adiciona margem superior para afastar da seção "sobre" */
+}
+
+.container-galeria {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Permitir que as fotos quebrem para a próxima linha */
+  max-width: 98%; /* Definir a largura máxima como 98% */
+  max-height: 80%; /* Definir a altura máxima como 80% */
+  gap: 15px; /* Adicionar espaço entre as fotos na galeria */
+}
+
+.fotos-galeria img {
+  max-width: 450px; /* Definir o tamanho máximo da largura da imagem */
+  height: 250px; /* Definir a altura fixa das imagens */
+  cursor: pointer;
+  border: 3px solid #fff; /* Adicionar borda para destacar a imagem ativa */
+}
+
+.fotos-galeria {
+  display: flex; /* Display the gallery items in a row */
+  flex-wrap: wrap; /* Allow gallery items to wrap to the next row */
+  justify-content: center; /* Center the items horizontally */
+  gap: 10px; /* Define the spacing between the gallery items */
+  max-width: 100%; /* Limit the width to the parent container */
+  margin-bottom: 35px;
+}
+
+
+
+/* Apply styles to the active image (clicked) */
+.fotos-galeria img.ativa {
+  border: 3px solid #f9b232; /* Change the border color for the active image */
+  opacity: 0.7; /* Reduce the opacity of inactive images to highlight the active one */
+}
+
+/* Set the width and height of gallery items to fit the columns */
+@media screen and (min-width: 768px) {
+  .fotos-galeria img {
+    width: calc(
+      25% - 10px
+    ); /* Four images in a row (25% width each) with 10px gap between them */
+    height: auto;
+  }
+}
+
+
+/* conteudo sobre o Propietario */
+
+.sobre {
+  background: #333;
+  display: flex;
+  padding: 50px 25px; /* Ajusta o padding para cima e para baixo */
+  gap: 15px;
+}
+
+.coluna-foto {
+  flex: 1;
+  display: flex; /* Adiciona display flex para centralizar a imagem */
+  justify-content: center; /* Centraliza a imagem verticalmente */
+}
+
+.foto-sobre img {
+  max-width: 80%;
+  height: auto;
+}
+
+.coluna-texto {
+  flex: 2;
+  background-image: url("/src/imagens/fundo-sobre.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  max-width: 50%;
+  max-height: 50%; /* Altera para 100% */
+}
+
+.conteudo-sobre {
+  color: #fff;
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 100%; /* Altera para 100% */
+}
+
+.conteudo-sobre h2 {
+  margin: 0;
+}
+
+
+/* footer */
+
+footer {
+  max-width: 100vw;
+  background-color: #ae6767;
+  display: flex;
+  justify-content: center;
+}
+
+.container-footer {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Divide o footer em duas colunas */
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.coluna-logo,
+.coluna-itens {
+  flex: 1; /* As duas colunas ocupam o mesmo espaço disponível */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinha os itens verticalmente no centro de cada coluna */
+  color: #333;
+}
+
+.coluna-logo img {
+  width: 100px; /* Tamanho do ícone */
+}
+
+.coluna-itens ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.coluna-itens li {
+  color: #333;
+  margin: 5px 0;
+}
+
+.coluna-itens h3,
+p {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin-bottom: 10px;
+  color: #fff;
+}
