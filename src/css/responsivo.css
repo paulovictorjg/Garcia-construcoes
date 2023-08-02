@@ -52,11 +52,13 @@
     display: flex;
   }
   .informacoes, img, .logo{
-    max-width: 40vw;
+    max-width: 60vw;
     margin: 10px;
   }
   .descricao, p{
+    max-width:auto;
     align-items: flex-start;
+    line-heigth:3px;
     font-size: 2em;
   }
   .frase{
