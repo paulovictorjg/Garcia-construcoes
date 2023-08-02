@@ -57,10 +57,10 @@
   }
   .descricao, p{
     align-items: flex-start;
-    font-size: 1em;
+    font-size: 3em;
   }
   .frase{
-    font-size: 1.5em;
+    font-size: 5em;
   }
   .galeria{
     display: grid;
