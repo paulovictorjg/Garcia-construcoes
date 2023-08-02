@@ -1,7 +1,7 @@
 /* Resolução até 1280px */
 @media (max-width: 1280px) {
   body {
-    display: flex;
+    display: grid;
     align-content: flex-start;
   }
   .logo {
@@ -46,16 +46,17 @@
 }
 
 /* Resolução até 768px */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .foto-fundo-ini {
     max-width: 100vw;
-    display: grid;
+    display: flex;
   }
   .informacoes, img, .logo{
     max-width: 40vw;
     margin: 10px;
   }
   .descricao, p{
+    align-items: flex-start;
     font-size: 1em;
   }
   .frase{
