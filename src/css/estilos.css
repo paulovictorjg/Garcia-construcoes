@@ -24,7 +24,7 @@ body {
 }
 
 .foto-fundo-ini {
-  background-image: url("/src/imagens/slide(1).jpg");
+  background-image: url("/src/imagens/fundo-principal.jpg");
   background-repeat: no-repeat; /* Removendo o slide */
   background-size: cover; /* Para cobrir todo o espaço do elemento */
   background-position: center; /* Centralizando a imagem */
