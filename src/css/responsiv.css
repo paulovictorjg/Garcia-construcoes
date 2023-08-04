@@ -1,0 +1,90 @@
+/* Resolução até 1280px */
+@media (max-width: 1280px) {
+  body {
+    display: grid;
+    align-content: flex-start;
+  }
+  .logo {
+    max-width: 480px;
+  }
+  .informacoes .p {
+    font-size: 500px;
+  }
+  .descricao {
+    width: 100%;
+    font-size: 1.5625em;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2em;
+  }
+  .frase {
+    font-size: 2.8125em;
+  }
+  .contato-container, p{
+    display: grid;
+    justify-items: center;
+    margin-top: 10px;
+  }
+  .contato-container, h1{
+    color: #fff;
+  }
+}
+
+/* Resolução até 768px */
+@media (min-width: 768px) {
+  .foto-fundo-ini {
+    max-width: 100vw;
+    display: flex;
+  }
+  .informacoes, img, .logo{
+    max-width: 40vw;
+    margin: 10px;
+  }
+  .descricao, p{
+    align-items: flex-start;
+    font-size: 1em;
+  }
+  .frase{
+    font-size: 1.5em;
+  }
+  .contato-container, p{
+    display: grid;
+    justify-items: center;
+    margin-top: 10px;
+  }
+  .contato-container, h1{
+    color: #fff;
+  }
+}
+
+/* Resolução até 600px */
+@media (max-width: 600px) {
+  body {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .informacoes {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .informacoes .logo {
+    max-width: 500px;
+  }
+  .informacoes .descricao {
+    width: 100%;
+    height: 65px;
+    line-height: 1.2em;
+  }
+  .informacoes .frase {
+    max-width: 100%;
+    font-size: 5em;
+    line-height: 1.4em;
+  }
+  .conteudo {
+    flex-grow: 1; /* Faz com que o conteúdo ocupe todo o espaço disponível no eixo vertical */
+    /* Restantes dos estilos para .conteudo */
+  }
+}

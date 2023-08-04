@@ -31,9 +31,6 @@ body {
   max-width: 100%;
 }
 .menu {
-  position: fixed; /* Fixar o menu no topo da página */
-  top: 0; /* Posicionar o menu no topo da página */
-  left: 0; /* Posicionar o menu à esquerda da página */
   width: 100%; /* Fazer o menu ocupar toda a largura da página */
   height: 35px;
   display: flex; /* Usar flexbox para posicionar o título e os itens do menu */
@@ -44,13 +41,17 @@ body {
 
 .menu-itens {
   display: flex; /* Usar flexbox para posicionar os itens do menu */
+  margin-top: 10px;
 }
 
 .menu-itens a {
   margin-left: 10px; /* Adicionar um espaço entre os itens do menu (opcional) */
-  font-size: 1..8em;
+  font-size: 1em;
   text-decoration: none; /* Remover a decoração de link padrão */
-  color: #333; /* Definir a cor do texto dos itens do menu */
+  background-color: #f9b232;
+  border-radius: 15%;
+  padding: 4px;
+  color: #000; /* Definir a cor do texto dos itens do menu */
 }
 
 .menu .icone {
@@ -100,188 +101,54 @@ body {
   margin-left: 50px;
 }
 
-.carrossel {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -1;
-}
-
-.carrossel .imagem {
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  display: none;
-  animation: mudarImagem 0.9s;
-}
-
-.carrossel .imagem.ativa {
-  display: block;
-}
-
-@keyframes mudarImagem {
-  from {
-    opacity: 0.85;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.sobre {
-  margin-top: 70px; /* Adiciona margem superior para acomodar o menu */
-}
-
-.titulo-galeria{
-  color: #fff;
-  margin-top: 15px;
-}
-
 .galeria {
   background: #333;
   max-width: 100%;
   max-height: 80%;
-  display: flex;
-  flex-wrap: wrap; /* Allow gallery items to wrap to the next row */
-  justify-content: center; /* Center the gallery items horizontally */
-}
-
-.container-galeria {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; /* Permitir que as fotos quebrem para a próxima linha */
-  max-width: 98%; /* Definir a largura máxima como 98% */
-  max-height: 80%; /* Definir a altura máxima como 80% */
-}
-
-.fotos-galeria img {
-  max-width: 450px; /* Definir o tamanho máximo da largura da imagem */
-  height: 250px; /* Definir a altura fixa das imagens */
-  cursor: pointer;
-  border: 3px solid #fff; /* Adicionar borda para destacar a imagem ativa */
-}
-
-.fotos-galeria {
-  display: flex; /* Display the gallery items in a row */
-  flex-wrap: wrap; /* Allow gallery items to wrap to the next row */
-  justify-content: center; /* Center the items horizontally */
-  max-width: 100%; /* Limit the width to the parent container */
-  margin-bottom: 35px;
-}
-
-
-
-/* Apply styles to the active image (clicked) */
-.fotos-galeria img.ativa {
-  border: 3px solid #f9b232; /* Change the border color for the active image */
-  opacity: 0.7; /* Reduce the opacity of inactive images to highlight the active one */
-}
-
-/* Set the width and height of gallery items to fit the columns */
-@media screen and (min-width: 768px) {
-  .fotos-galeria img {
-    width: calc(
-      25% - 10px
-    ); /* Four images in a row (25% width each) with 10px gap between them */
-    height: auto;
-  }
-}
-
-
-/* conteudo sobre o Propietario */
-
-.sobre {
-  background: #333;
-  display: flex;
-  padding: 50px 25px; /* Ajusta o padding para cima e para baixo */
-  gap: 15px;
-}
-
-.coluna-foto {
-  flex: 1;
-  display: flex; /* Adiciona display flex para centralizar a imagem */
-  justify-content: center; /* Centraliza a imagem verticalmente */
-}
-
-.foto-sobre img {
-  max-width: 80%;
-  height: auto;
-}
-
-.coluna-texto {
-  flex: 2;
-  background-image: url("/src/imagens/fundo-sobre.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  max-width: 50%;
-  max-height: 50%; /* Altera para 100% */
-}
-
-.conteudo-sobre {
-  color: #fff;
-  font-family: "Dancing Script", cursive;
-  font-size: 20px;
-  line-height: 1.5;
+  display: grid;
   text-align: center;
-  max-width: 100%; /* Altera para 100% */
 }
 
-.conteudo-sobre h2 {
-  margin: 0;
-}
-
-
-/* footer */
-
-footer {
-  max-width: 100vw;
-  background-color: #ae6767;
-  display: flex;
-  justify-content: center;
-}
-
-.container-footer {
-  max-width: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between; /* Divide o footer em duas colunas */
-  align-items: center;
-  flex-direction: row-reverse;
-}
-
-.coluna-logo,
-.coluna-itens {
-  flex: 1; /* As duas colunas ocupam o mesmo espaço disponível */
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Alinha os itens verticalmente no centro de cada coluna */
-  color: #333;
-}
-
-.coluna-logo img {
-  width: 100px; /* Tamanho do ícone */
-}
-
-.coluna-itens ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.coluna-itens li {
-  color: #333;
-  margin: 5px 0;
-}
-
-.coluna-itens h3,
-p {
-  font-size: 1.2em;
-  font-weight: normal;
-  margin-bottom: 10px;
+.titulo-galeria {
   color: #fff;
+  margin: 15px;
+  font-family: Dancing Script;
+
+}
+
+.slide{
+  max-width: 80%;
+  max-height: auto;
+  margin-left: 10%;
+  margin-bottom: 35px;
+  display: grid;
+}
+
+.slide, img{
+border-radius: 18px;
+}
+
+.sobre{
+  display: grid;
+  width: 100%;
+  height: 650px;
+  background-color: #254;
+  align-items: center;
+}
+
+.texto{
+  text-align: center;
+  max-width: 90%;
+  margin: 5%;
+}
+
+.contato-container{
+  display: grid;
+  justify-items: center;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.contato, h1, a{
+color: #fff;
 }
