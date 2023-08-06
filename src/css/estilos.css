@@ -72,10 +72,6 @@ body {
   margin: 0; /* Remova qualquer margem padrão que possa estar causando o espaçamento indesejado */
 }
 
-.foto-fundo-ini{
-  background-image: url(/src/imagens/fundo-principal.jpg);
-}
-
 .conteudo {
   display: flex;
   flex-direction: column;
@@ -112,7 +108,6 @@ body {
 
 .titulo-galeria {
   color: #fff;
-  margin: 15px;
   font-family: Dancing Script;
 
 }
