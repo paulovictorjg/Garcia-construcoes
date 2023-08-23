@@ -1,0 +1,26 @@
+body{
+    margin: 0;
+    gap: 0;
+    padding: 0;
+}
+
+.manutencao {
+    display: grid;
+    background: url("/src/imagens/site_em_construcao.jpg") no-repeat center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.texto{
+    height: 10vh;
+    margin: 0.5rem 2rem;
+    font-size: 1.2rem;
+}
+
+a{
+    text-decoration: none;
+    background-color: #F9B232;
+    border-radius: 10%;
+    padding: 1px;
+    color: rgb(8, 8, 8);
+}

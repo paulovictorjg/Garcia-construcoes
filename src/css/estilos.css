@@ -107,9 +107,10 @@ body {
 }
 
 .titulo-galeria {
-  color: #fff;
+  color: #111111;
   font-family: Dancing Script;
-
+  text-align: center;
+  margin-top: 1.5rem;
 }
 
 .slide{
@@ -124,22 +125,10 @@ body {
 border-radius: 18px;
 }
 
-.sobre{
-  display: grid;
-  width: 100%;
-  height: 650px;
-  background-color: #254;
-  align-items: center;
-}
-
-.texto{
-  text-align: center;
-  max-width: 90%;
-  margin: 5%;
-}
-
 .contato-container{
+  width: 100%;
   display: grid;
+  grid-template-columns: auto 50px;
   justify-items: center;
   margin-top: 10px;
   text-align: center;
@@ -147,4 +136,8 @@ border-radius: 18px;
 
 .contato, h1, a{
 color: #fff;
+}
+
+.contato-container, .seta{
+    margin-top: 5px;
 }
