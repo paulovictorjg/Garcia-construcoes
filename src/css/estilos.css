@@ -98,31 +98,11 @@ body {
   margin-left: 50px;
 }
 
-.galeria {
-  background: #333;
-  max-width: 100%;
-  max-height: 80%;
-  display: grid;
-  text-align: center;
-}
-
 .titulo-galeria {
   color: #111111;
   font-family: Dancing Script;
   text-align: center;
   margin-top: 0.7rem;
-}
-
-.slide{
-  max-width: 80%;
-  max-height: auto;
-  margin-left: 10%;
-  margin-bottom: 35px;
-  display: grid;
-}
-
-.slide, img{
-border-radius: 18px;
 }
 
 .contato-container{
@@ -131,6 +111,14 @@ border-radius: 18px;
   grid-template-columns: auto 50px;
   justify-items: center;
   margin-top: 10px;
+  text-align: center;
+}
+
+.contato{
+  background: #333;
+  max-width: 100%;
+  max-height: 80%;
+  display: grid;
   text-align: center;
 }
 
