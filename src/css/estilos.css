@@ -102,7 +102,12 @@ body {
   color: #111111;
   font-family: Dancing Script;
   text-align: center;
-  margin-top: 0.7rem;
+  margin: 2rem 0rem 2rem 0rem;
+}
+
+.video-container {
+    max-height: auto;
+    overflow: hidden; /* Para cortar o vídeo se ele exceder a altura máxima */
 }
 
 .contato-container{
