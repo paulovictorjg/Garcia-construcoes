@@ -1,10 +1,14 @@
-/* Esconde a barra de rolagem vertical */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer e Edge */
+  font-family: "Poppins", sans-serif;
+  max-width: 100%;
 }
 
-/* Permite a navegação usando o teclado */
 body::-webkit-scrollbar {
   width: 1px;
 }
@@ -18,37 +22,31 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  max-width: 100%;
-}
-
 .foto-fundo-ini {
   background-image: url("/src/imagens/fundo-principal.jpg");
-  background-repeat: no-repeat; /* Removendo o slide */
-  /*background-size: contain; n vai cortar a foto*/
-  background-repeat: cover; /* Para cobrir todo o espaço do elemento */
-  background-position: center; /* Centralizando a imagem */
+  background-repeat: no-repeat;
+  background-repeat: cover; 
+  background-position: center;
   max-width: 100%;
 }
 .menu {
-  width: 100%; /* Fazer o menu ocupar toda a largura da página */
+  width: 100%; 
   height: 35px;
-  display: flex; /* Usar flexbox para posicionar o título e os itens do menu */
-  justify-content: space-between; /* Colocar o título à esquerda e os itens do menu à direita */
-  align-items: center; /* Centralizar verticalmente o conteúdo do menu */
-  padding: 10px; /* Adicionar um espaço de preenchimento interno ao menu para melhorar a aparência */
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .menu-itens {
-  display: flex; /* Usar flexbox para posicionar os itens do menu */
+  display: flex; 
   margin-top: 10px;
 }
 
 .menu-itens a {
-  margin-left: 10px; /* Adicionar um espaço entre os itens do menu (opcional) */
+  margin-left: 10px;
   font-size: 1em;
-  text-decoration: none; /* Remover a decoração de link padrão */
+  text-decoration: none; 
   background-color: #f9b232;
   border-radius: 15%;
   padding: 4px;
@@ -84,17 +82,17 @@ body {
 }
 
 .descricao {
-  font-weight: 500px;
-  font-size: 20px;
+  font-family: Dancing Script;
+  font-size: 30px;
   line-height: 25px;
-  color: #fff;
+  color: #000000;
   margin-left: 50px;
 }
 
 .frase {
   font-family: Dancing Script;
   font-size: 45px;
-  color: #fff;
+  color: #000000;
   margin-left: 50px;
 }
 
@@ -103,6 +101,15 @@ body {
   font-family: Dancing Script;
   text-align: center;
   margin: 2rem 0rem 2rem 0rem;
+}
+
+.galeria-fotos img:hover {
+    transform: scale(1.1);
+    transition: transform .2s;
+}
+
+.galeria-fotos img {
+    box-shadow: 10px 10px 5px grey;
 }
 
 .video-container {
