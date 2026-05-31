@@ -1,0 +1,158 @@
+[
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (5).png",
+    "title": "Residência Unifamiliar — Jaraguá do Sul",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (6).png",
+    "title": "Obra Residencial — Jaraguá do Sul",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/foto(1).png",
+    "title": "Casa em Construção",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/foto(2).png",
+    "title": "Acabamento Interno",
+    "categoria": "acabamento"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/foto(3).png",
+    "title": "Alvenaria e Estrutura",
+    "categoria": "estrutura"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/foto(4).png",
+    "title": "Obra em Progresso",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/foto(7).png",
+    "title": "Fachada Concluída",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/foto(8).png",
+    "title": "Detalhe de Acabamento",
+    "categoria": "acabamento"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/img (1).png",
+    "title": "Projeto Residencial",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/img (2).png",
+    "title": "Construção Recente",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/img (3).png",
+    "title": "Obra Comercial",
+    "categoria": "comercial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/img (4).png",
+    "title": "Estrutura Metálica",
+    "categoria": "estrutura"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/img (5).png",
+    "title": "Acabamento Externo",
+    "categoria": "acabamento"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/img (6).png",
+    "title": "Residência Concluída",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (1).png",
+    "title": "Obra Jaraguá",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (2).png",
+    "title": "Construção em Andamento",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (3).png",
+    "title": "Alvenaria Estrutural",
+    "categoria": "estrutura"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (4).png",
+    "title": "Projeto Novo",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (7).png",
+    "title": "Detalhe Interno",
+    "categoria": "acabamento"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (8).png",
+    "title": "Cobertura e Telhado",
+    "categoria": "estrutura"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (9).png",
+    "title": "Fundação e Estrutura",
+    "categoria": "estrutura"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (10).png",
+    "title": "Revestimento Externo",
+    "categoria": "acabamento"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (11).png",
+    "title": "Obra Residencial 2024",
+    "categoria": "residencial"
+  },
+  {
+    "type": "foto",
+    "src": "src/imagens/novas (12).png",
+    "title": "Entrega de Obra",
+    "categoria": "residencial"
+  },
+  {
+    "type": "video",
+    "src": "src/imagens/video-obras.mp4",
+    "title": "Tour pelas Obras — Garcia Construções",
+    "categoria": "video"
+  },
+  {
+    "type": "video",
+    "src": "src/imagens/video-obras 1.mp4",
+    "title": "Processo Construtivo — Garcia Construções",
+    "categoria": "video"
+  }
+]
