@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garcia Construções — Construindo Sonhos desde 2003</title>
+  <meta name="description" content="Garcia Construções — Obras residenciais e comerciais em Jaraguá do Sul, SC. Qualidade e experiência desde 2003." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <!-- GLightbox (Lightbox profissional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+
+  <style>
+    /* ─── RESET & VARIABLES ──────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-bg:       #0d0d0d;
+      --c-surface:  #161616;
+      --c-border:   #242424;
+      --c-accent:   #c8922a;
+      --c-accent2:  #e8b04a;
+      --c-text:     #f0ede8;
+      --c-muted:    #888;
+      --font-head:  'Barlow Condensed', sans-serif;
+      --font-body:  'Lato', sans-serif;
+      --max-w:      1280px;
+      --nav-h:      72px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--c-bg);
+      color: var(--c-text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── NAVBAR ─────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
+      transition: background .3s;
+    }
+    .nav.scrolled { background: rgba(13,13,13,0.96); border-bottom: 1px solid var(--c-border); }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+    .nav-brand-mark {
+      height: 44px;
+      width: auto;
+      display: block;
+      filter: drop-shadow(0 0 6px rgba(0,149,255,.35));
+    }
+    .nav-brand-logo {
+      height: 38px;
+      width: auto;
+      display: block;
+      /* A logo tem fundo branco — invertemos para funcionar no fundo escuro */
+      filter: invert(1) brightness(1.1);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--c-accent); }
+
+    .nav-cta {
+      background: var(--c-accent);
+      color: #000 !important;
+      padding: .45rem 1.25rem;
+    }
+    .nav-cta:hover { background: var(--c-accent2) !important; color: #000 !important; }
+
+    /* Mobile menu toggle */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--c-text);
+      transition: all .3s;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: fixed;
+        top: var(--nav-h); left: 0; right: 0;
+        background: var(--c-bg);
+        border-top: 1px solid var(--c-border);
+        flex-direction: column;
+        gap: 0;
+        padding: 1rem 0 1.5rem;
+        transform: translateY(-110%);
+        opacity: 0;
+        transition: transform .3s, opacity .3s;
+      }
+      .nav-links.open { transform: translateY(0); opacity: 1; }
+      .nav-links li { width: 100%; text-align: center; }
+      .nav-links a { display: block; padding: .85rem 0; font-size: 1.15rem; }
+      .nav-cta { margin: .5rem auto; width: fit-content; }
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+    }
+    .hero-slide.active { opacity: 1; }
+
+    /* Placeholder gradient slides (substitua pelas fotos reais) */
+    .hero-slide:nth-child(1) { background: linear-gradient(135deg, #1a1005 0%, #3d2b08 50%, #0d0d0d 100%); }
+    .hero-slide:nth-child(2) { background: linear-gradient(135deg, #050d1a 0%, #0a2040 50%, #0d0d0d 100%); }
+    .hero-slide:nth-child(3) { background: linear-gradient(135deg, #0d0d0d 0%, #1c1c0d 50%, #2a2a12 100%); }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(0,0,0,.85) 0%,
+        rgba(0,0,0,.5) 50%,
+        rgba(0,0,0,.2) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-w);
+      width: 100%;
+      padding: calc(var(--nav-h) + 2rem) clamp(1.5rem, 5vw, 5rem) 4rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 40px; height: 2px;
+      background: var(--c-accent);
+    }
+
+    .hero-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(3.5rem, 10vw, 8rem);
+      line-height: .92;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em {
+      font-style: normal;
+      color: var(--c-accent);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      color: rgba(240,237,232,.7);
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .85rem 2rem;
+      cursor: pointer;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--c-accent);
+      color: #000;
+    }
+    .btn-primary:hover { background: var(--c-accent2); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--c-text);
+      border: 2px solid rgba(240,237,232,.3);
+    }
+    .btn-outline:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 2.5rem;
+      left: clamp(1.5rem, 5vw, 5rem);
+      z-index: 2;
+      display: flex;
+      gap: .5rem;
+    }
+    .hero-dot {
+      width: 6px; height: 6px;
+      border-radius: 3px;
+      background: rgba(240,237,232,.3);
+      cursor: pointer;
+      transition: all .3s;
+      border: none;
+    }
+    .hero-dot.active { background: var(--c-accent); width: 24px; }
+
+    .hero-stats {
+      position: absolute;
+      bottom: 2rem;
+      right: clamp(1.5rem, 5vw, 5rem);
+      z-index: 2;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .stat-item { text-align: right; }
+    .stat-num {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2rem;
+      color: var(--c-accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .75rem;
+      color: var(--c-muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .hero-stats { display: none; }
+    }
+
+    /* ─── SECTION WRAPPER ────────────────────────────────── */
+    .section {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 5rem clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+    .section-label {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: .75rem;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px; height: 2px;
+      background: var(--c-accent);
+    }
+    .section-title {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      text-transform: uppercase;
+      line-height: .95;
+    }
+    .section-title span { color: var(--c-accent); }
+
+    /* ─── SERVIÇOS ───────────────────────────────────────── */
+    .servicos-bg { background: var(--c-surface); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border); }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1px;
+      background: var(--c-border);
+      border: 1px solid var(--c-border);
+    }
+    .servico-card {
+      background: var(--c-surface);
+      padding: 2.5rem 2rem;
+      transition: background .2s;
+    }
+    .servico-card:hover { background: #1e1e1e; }
+    .servico-icon {
+      font-size: 2rem;
+      margin-bottom: 1.25rem;
+    }
+    .servico-card h3 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .5rem;
+    }
+    .servico-card p {
+      font-size: .9rem;
+      color: var(--c-muted);
+      line-height: 1.6;
+    }
+
+    /* ─── GALERIA ────────────────────────────────────────── */
+    .gallery-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .4rem 1rem;
+      border: 2px solid var(--c-border);
+      background: transparent;
+      color: var(--c-muted);
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .filter-btn:hover,
+    .filter-btn.active { border-color: var(--c-accent); color: var(--c-accent); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 4px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      background: var(--c-surface);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0);
+      display: grid;
+      place-items: center;
+      transition: background .3s;
+    }
+    .gallery-item:hover .gallery-item-overlay { background: rgba(0,0,0,.4); }
+    .gallery-item-icon {
+      opacity: 0;
+      transform: scale(.8);
+      transition: all .3s;
+      font-size: 2rem;
+      color: #fff;
+    }
+    .gallery-item:hover .gallery-item-icon { opacity: 1; transform: scale(1); }
+
+    .gallery-item.video-item { position: relative; }
+    .video-badge {
+      position: absolute;
+      top: .75rem; left: .75rem;
+      background: var(--c-accent);
+      color: #000;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .2rem .6rem;
+      z-index: 2;
+    }
+
+    .gallery-load-more {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    /* ─── SOBRE / CTA ────────────────────────────────────── */
+    .sobre-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .sobre-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .sobre-text p {
+      color: rgba(240,237,232,.75);
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+    .sobre-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .value-item {
+      border-left: 3px solid var(--c-accent);
+      padding-left: 1rem;
+    }
+    .value-item strong {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: .25rem;
+    }
+    .value-item span { font-size: .85rem; color: var(--c-muted); }
+
+    .sobre-visual {
+      position: relative;
+    }
+    .sobre-visual-main {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      background: var(--c-surface);
+    }
+    .sobre-badge {
+      position: absolute;
+      bottom: -1.5rem;
+      right: -1.5rem;
+      width: 130px; height: 130px;
+      background: var(--c-accent);
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+    .sobre-badge strong {
+      font-family: var(--font-head);
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: #000;
+      line-height: 1;
+      display: block;
+    }
+    .sobre-badge span {
+      font-family: var(--font-head);
+      font-size: .75rem;
+      font-weight: 700;
+      color: rgba(0,0,0,.7);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    @media (max-width: 480px) {
+      .sobre-badge { right: 0; bottom: 0; width: 100px; height: 100px; }
+      .sobre-badge strong { font-size: 2rem; }
+    }
+
+    /* ─── CONTATO ────────────────────────────────────────── */
+    .contato-bg {
+      background: var(--c-surface);
+      border-top: 1px solid var(--c-border);
+    }
+    .contato-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      .contato-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .contato-info-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      align-items: flex-start;
+    }
+    .contato-info-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+    .contato-info-item h4 {
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--c-accent);
+      margin-bottom: .2rem;
+    }
+    .contato-info-item a, .contato-info-item p {
+      font-size: .95rem;
+      color: rgba(240,237,232,.75);
+      transition: color .2s;
+    }
+    .contato-info-item a:hover { color: var(--c-accent); }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      background: #25D366;
+      color: #fff;
+      font-family: var(--font-head);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 1rem 2rem;
+      margin-top: 1.5rem;
+      transition: all .2s;
+    }
+    .whatsapp-btn:hover { background: #128C7E; transform: translateY(-2px); color: #fff; }
+
+    /* ─── FOOTER ─────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--c-border);
+      padding: 2rem clamp(1.5rem, 4vw, 3rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    footer p {
+      font-size: .8rem;
+      color: var(--c-muted);
+    }
+    footer a { color: var(--c-accent); }
+
+    /* ─── UTILS ──────────────────────────────────────────── */
+    .divider { height: 1px; background: var(--c-border); }
+    .hidden { display: none !important; }
+
+    /* Loading state para galeria */
+    .gallery-loading {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem;
+      color: var(--c-muted);
+      font-family: var(--font-head);
+      font-size: 1.1rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .gallery-placeholder {
+      background: linear-gradient(90deg, var(--c-surface) 25%, #1e1e1e 50%, var(--c-surface) 75%);
+      background-size: 200% 100%;
+      animation: shimmer 1.5s infinite;
+    }
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────── -->
+  <nav class="nav" id="navbar">
+    <a href="#" class="nav-brand">
+      <img class="nav-brand-mark" src="src/imagens/icone-footer.png" alt="Ícone Garcia Construções">
+      <img class="nav-brand-logo" src="src/imagens/logo-principal.png" alt="Garcia Construções">
+    </a>
+
+    <button class="nav-toggle" id="menuToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+      <li><a href="https://wa.me/5547999905987" class="nav-cta" target="_blank">Orçamento</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-slides" id="heroSlides">
+      <div class="hero-slide active"
+           style="background-image: url('src/imagens/novas (5).png')">
+      </div>
+      <div class="hero-slide"
+           style="background-image: url('src/imagens/foto(1).png')">
+      </div>
+      <div class="hero-slide"
+           style="background-image: url('src/imagens/img (3).png')">
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow">Jaraguá do Sul, SC — Desde 2003</p>
+      <h1 class="hero-title">
+        <img
+          src="src/imagens/logo-principal.png"
+          alt="Garcia Construções — Construindo Sonhos com Qualidade"
+          style="max-width: clamp(280px, 50vw, 520px); width: 100%; height: auto; filter: drop-shadow(0 4px 24px rgba(0,0,0,.7));"
+        >
+      </h1>
+      <p class="hero-sub">
+        Obras residenciais e comerciais com excelência técnica, materiais de alta qualidade e mais de 20 anos de experiência.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5547999905987" class="btn btn-primary" target="_blank">
+          💬 Pedir Orçamento
+        </a>
+        <a href="#galeria" class="btn btn-outline">
+          Ver Obras →
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-dots" id="heroDots">
+      <button class="hero-dot active" data-slide="0"></button>
+      <button class="hero-dot" data-slide="1"></button>
+      <button class="hero-dot" data-slide="2"></button>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Anos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">200+</div>
+        <div class="stat-label">Obras</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Dedicação</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVIÇOS ──────────────────────────────────────── -->
+  <div class="servicos-bg">
+    <div class="section">
+      <div class="section-header">
+        <div class="section-label">O que fazemos</div>
+        <h2 class="section-title">Nossos<br><span>Serviços</span></h2>
+      </div>
+      <div class="servicos-grid">
+        <div class="servico-card">
+          <div class="servico-icon">🏠</div>
+          <h3>Construção Residencial</h3>
+          <p>Casas e sobrados do projeto ao acabamento, com acompanhamento completo.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🏗️</div>
+          <h3>Obras Comerciais</h3>
+          <p>Galpões, lojas e escritórios com estrutura sólida e prazo garantido.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🔨</div>
+          <h3>Reformas</h3>
+          <p>Ampliações, reformas e renovações com qualidade de obra nova.</p>
+        </div>
+        <div class="servico-card">
+          <div class="servico-icon">🪟</div>
+          <h3>Alvenaria & Acabamento</h3>
+          <p>Reboco, revestimento, pintura e todos os acabamentos internos e externos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GALERIA ────────────────────────────────────────── -->
+  <section id="galeria">
+    <div class="section">
+      <div class="section-header" style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:1.5rem;">
+        <div>
+          <div class="section-label">Portfólio</div>
+          <h2 class="section-title">Nossas<br><span>Obras</span></h2>
+        </div>
+        <div class="gallery-filters" id="galleryFilters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="foto">Fotos</button>
+          <button class="filter-btn" data-filter="video">Vídeos</button>
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-loading">Carregando obras…</div>
+      </div>
+
+      <div class="gallery-load-more" id="loadMoreWrap" style="display:none;">
+        <button class="btn btn-outline" id="loadMoreBtn">Carregar mais →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOBRE ──────────────────────────────────────────── -->
+  <div class="contato-bg" id="sobre">
+    <div class="section">
+      <div class="sobre-layout">
+        <div class="sobre-text">
+          <div class="section-label">Quem somos</div>
+          <h2 class="section-title" style="margin-bottom:1.5rem;">Garcia<br><span>Construções</span></h2>
+          <p>Fundada em 2003 em Jaraguá do Sul, SC, a Garcia Construções acumula mais de duas décadas construindo residências, comércios e reformas com excelência técnica e compromisso com cada cliente.</p>
+          <p>Trabalhamos com materiais selecionados, mão de obra qualificada e um processo transparente — do orçamento à entrega das chaves.</p>
+          <p style="color: var(--c-accent); font-style:italic; font-size:1.05rem;">"Com Deus na Frente Seguimos"</p>
+          <div class="sobre-values">
+            <div class="value-item">
+              <strong>Qualidade</strong>
+              <span>Materiais premium em cada etapa</span>
+            </div>
+            <div class="value-item">
+              <strong>Prazo</strong>
+              <span>Entrega no tempo combinado</span>
+            </div>
+            <div class="value-item">
+              <strong>Transparência</strong>
+              <span>Orçamento claro e sem surpresas</span>
+            </div>
+            <div class="value-item">
+              <strong>Experiência</strong>
+              <span>+20 anos no mercado</span>
+            </div>
+          </div>
+        </div>
+        <div class="sobre-visual">
+          <!-- Substitua pelo caminho real de uma boa foto da equipe/obra -->
+          <div class="sobre-visual-main gallery-placeholder" style="min-height:400px;"></div>
+          <div class="sobre-badge">
+            <strong>20+</strong>
+            <span>anos de experiência</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ── CONTATO ────────────────────────────────────────── -->
+  <section id="contato">
+    <div class="section">
+      <div class="contato-layout">
+        <div>
+          <div class="section-label">Fale conosco</div>
+          <h2 class="section-title" style="margin-bottom:1.5rem;">Peça seu<br><span>Orçamento</span></h2>
+          <p style="color:rgba(240,237,232,.7); margin-bottom:2rem; line-height:1.75;">
+            Atendemos em Jaraguá do Sul e região. Entre em contato pelo WhatsApp para um orçamento rápido e sem compromisso.
+          </p>
+          <a href="https://wa.me/5547999905987" class="whatsapp-btn" target="_blank">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.122 1.532 5.856L.057 23.5l5.796-1.52A11.93 11.93 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.85 0-3.585-.484-5.093-1.332l-.361-.215-3.741.981.998-3.648-.235-.374A9.91 9.91 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            (47) 99990-5987
+          </a>
+        </div>
+
+        <div>
+          <div class="contato-info-item">
+            <span class="contato-info-icon">📍</span>
+            <div>
+              <h4>Localização</h4>
+              <p>Jaraguá do Sul, SC</p>
+            </div>
+          </div>
+          <div class="contato-info-item">
+            <span class="contato-info-icon">📱</span>
+            <div>
+              <h4>WhatsApp / Telefone</h4>
+              <a href="https://wa.me/5547999905987" target="_blank">(47) 99990-5987</a>
+            </div>
+          </div>
+          <div class="contato-info-item">
+            <span class="contato-info-icon">📷</span>
+            <div>
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/garciaconstrucoes99/" target="_blank">@garciaconstrucoes99</a>
+            </div>
+          </div>
+          <div class="contato-info-item">
+            <span class="contato-info-icon">✉️</span>
+            <div>
+              <h4>E-mail</h4>
+              <a href="mailto:garciaconstrucoes99@gmail.com">garciaconstrucoes99@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <p>© 2024 Garcia Construções. Todos os direitos reservados.</p>
+    <p>Desenvolvido com ❤️ — Jaraguá do Sul, SC</p>
+  </footer>
+
+  <!-- GLightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <script>
+  /* ── NAVBAR SCROLL ──────────────────────────────── */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  }, { passive: true });
+
+  /* ── MOBILE MENU ────────────────────────────────── */
+  const toggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => navLinks.classList.remove('open'))
+  );
+
+  /* ── HERO SLIDER ────────────────────────────────── */
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  let current = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function startAuto() {
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+  startAuto();
+
+  dots.forEach(d => d.addEventListener('click', () => {
+    clearInterval(timer);
+    goTo(+d.dataset.slide);
+    startAuto();
+  }));
+
+  /* ── GALLERY: carrega do JSON ───────────────────── */
+  const ITEMS_PER_PAGE = 12;
+  let allItems = [];
+  let filtered = [];
+  let page = 0;
+  let lightbox;
+
+  async function loadGallery() {
+    try {
+      const res = await fetch('obras.json');
+      if (!res.ok) throw new Error('JSON não encontrado');
+      allItems = await res.json();
+    } catch {
+      // fallback com as imagens do site original
+      allItems = [
+        { type:'foto', src:'src/imagens/imagen(5).svg',   title:'Obra Residencial' },
+        { type:'foto', src:'src/imagens/imagen(12).svg',  title:'Obra Residencial' },
+        { type:'foto', src:'src/imagens/imagen(11).svg',  title:'Construção' },
+        { type:'foto', src:'src/imagens/imagen(10).svg',  title:'Construção' },
+        { type:'foto', src:'src/imagens/imagen(1).svg',   title:'Obra' },
+        { type:'foto', src:'src/imagens/imagen(2).svg',   title:'Obra' },
+        { type:'foto', src:'src/imagens/imagen(3).svg',   title:'Detalhe' },
+        { type:'foto', src:'src/imagens/imagen(4).svg',   title:'Detalhe' },
+        { type:'foto', src:'src/imagens/imagen(9).svg',   title:'Acabamento' },
+        { type:'foto', src:'src/imagens/imagen(6).svg',   title:'Acabamento' },
+        { type:'foto', src:'src/imagens/imagen(7).svg',   title:'Alvenaria' },
+        { type:'foto', src:'src/imagens/imagen(8).svg',   title:'Alvenaria' },
+        { type:'foto', src:'src/imagens/novas (5).png',   title:'Obra Nova' },
+        { type:'foto', src:'src/imagens/novas (6).png',   title:'Obra Nova' },
+        { type:'foto', src:'src/imagens/novas (3).png',   title:'Construção Nova' },
+        { type:'foto', src:'src/imagens/novas (4).png',   title:'Construção Nova' },
+        { type:'foto', src:'src/imagens/novas (11).png',  title:'Projeto' },
+        { type:'foto', src:'src/imagens/novas (12).png',  title:'Projeto' },
+        { type:'foto', src:'src/imagens/foto(1).png',     title:'Residência' },
+        { type:'foto', src:'src/imagens/foto(2).png',     title:'Residência' },
+        { type:'foto', src:'src/imagens/foto(3).png',     title:'Residência' },
+        { type:'foto', src:'src/imagens/foto(4).png',     title:'Residência' },
+        { type:'foto', src:'src/imagens/foto(7).png',     title:'Obra' },
+        { type:'foto', src:'src/imagens/foto(8).png',     title:'Obra' },
+        { type:'foto', src:'src/imagens/novas (7).png',   title:'Detalhes' },
+        { type:'foto', src:'src/imagens/novas (1).png',   title:'Detalhes' },
+        { type:'foto', src:'src/imagens/novas (9).png',   title:'Construção' },
+        { type:'foto', src:'src/imagens/novas (10).png',  title:'Construção' },
+        { type:'foto', src:'src/imagens/novas (8).png',   title:'Construção' },
+        { type:'foto', src:'src/imagens/novas (2).png',   title:'Construção' },
+        { type:'foto', src:'src/imagens/img (3).png',     title:'Obra Recente' },
+        { type:'foto', src:'src/imagens/img (5).png',     title:'Obra Recente' },
+        { type:'foto', src:'src/imagens/img (4).png',     title:'Obra Recente' },
+        { type:'foto', src:'src/imagens/img (1).png',     title:'Obra Recente' },
+        { type:'foto', src:'src/imagens/img (2).png',     title:'Obra Recente' },
+        { type:'foto', src:'src/imagens/img (6).png',     title:'Obra Recente' },
+        { type:'video', src:'src/imagens/video-obras.mp4',  title:'Vídeo das Obras' },
+        { type:'video', src:'src/imagens/video-obras 1.mp4', title:'Vídeo das Obras 2' },
+      ];
+    }
+
+    applyFilter('all');
+  }
+
+  function applyFilter(filter) {
+    filtered = filter === 'all' ? allItems : allItems.filter(i => i.type === filter);
+    page = 0;
+    renderGallery(true);
+  }
+
+  function renderGallery(reset) {
+    const grid = document.getElementById('galleryGrid');
+    const start = page * ITEMS_PER_PAGE;
+    const slice = filtered.slice(start, start + ITEMS_PER_PAGE);
+
+    if (reset) grid.innerHTML = '';
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="gallery-loading">Nenhuma obra encontrada.</div>';
+      return;
+    }
+
+    slice.forEach((item, i) => {
+      const el = document.createElement('div');
+      el.className = 'gallery-item' + (item.type === 'video' ? ' video-item' : '');
+
+      if (item.type === 'video') {
+        el.innerHTML = `
+          <div class="video-badge">▶ Vídeo</div>
+          <a class="glightbox" href="${item.src}" data-type="video" data-title="${item.title}" aria-label="${item.title}">
+            <video muted loop preload="none" style="width:100%;height:100%;object-fit:cover;">
+              <source src="${item.src}" type="video/mp4">
+            </video>
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-icon">▶</div>
+            </div>
+          </a>`;
+      } else {
+        el.innerHTML = `
+          <a class="glightbox" href="${item.src}" data-title="${item.title}" aria-label="${item.title}">
+            <img src="${item.src}" alt="${item.title}" loading="lazy">
+            <div class="gallery-item-overlay">
+              <div class="gallery-item-icon">🔍</div>
+            </div>
+          </a>`;
+      }
+      grid.appendChild(el);
+    });
+
+    // Reinicia lightbox
+    if (lightbox) lightbox.destroy();
+    lightbox = GLightbox({ selector: '.glightbox', touchNavigation: true, loop: true });
+
+    page++;
+    const loadMoreWrap = document.getElementById('loadMoreWrap');
+    loadMoreWrap.style.display = page * ITEMS_PER_PAGE < filtered.length ? 'block' : 'none';
+  }
+
+  // Filtros
+  document.getElementById('galleryFilters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilter(btn.dataset.filter);
+  });
+
+  document.getElementById('loadMoreBtn').addEventListener('click', () => renderGallery(false));
+
+  // Inicia
+  loadGallery();
+  </script>
+</body>
+</html>
